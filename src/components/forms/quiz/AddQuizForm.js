@@ -22,6 +22,7 @@ const AddQuizForm = ({ setModal, setAlertOpen, SetAlertType, setMessage }) => {
 
 	// Get Videos query
 	const { data: videos } = useGetVideosQuery();
+
 	//Add quiz mutation
 	const [addQuiz, { data, isLoading, isError, error, isSuccess }] =
 		useAddQuizzesMutation();

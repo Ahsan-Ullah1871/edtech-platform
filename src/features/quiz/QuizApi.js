@@ -25,7 +25,7 @@ export const quizApi = apiSlice.injectEndpoints({
 					const { data: new_quiz } =
 						await queryFulfilled;
 					if (new_quiz?.id) {
-						// Pessimistic update
+						//Cash updating in  Pessimistic  way
 						dispatch(
 							apiSlice.util.updateQueryData(
 								"getQuizzes",
@@ -56,7 +56,7 @@ export const quizApi = apiSlice.injectEndpoints({
 				{ data, quiz_id },
 				{ queryFulfilled, dispatch }
 			) {
-				//Optimistic update mutation
+				//Cash updating in  Optimistic  way
 				const patchResult = dispatch(
 					apiSlice.util.updateQueryData(
 						"getQuizzes",
@@ -97,7 +97,7 @@ export const quizApi = apiSlice.injectEndpoints({
 				{ quiz_id },
 				{ queryFulfilled, dispatch }
 			) {
-				//Optimistic update mutation
+				//Cash updating in  Optimistic  way
 				const patchResult = dispatch(
 					apiSlice.util.updateQueryData(
 						"getQuizzes",

@@ -34,7 +34,8 @@ const EditQuizForm = ({
 
 	// Get Videos query
 	const { data: videos } = useGetVideosQuery();
-	//Add quiz mutation
+
+	//Edit quiz mutation
 	const [editQuiz, { data, isLoading, isError, error, isSuccess }] =
 		useEditQuizMutation();
 
@@ -57,7 +58,7 @@ const EditQuizForm = ({
 		setModal(false);
 	};
 
-	//error and success handlaing
+	//error and success handling
 	useEffect(() => {
 		if (isError) {
 			setAlertOpen(true);

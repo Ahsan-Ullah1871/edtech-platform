@@ -39,7 +39,8 @@ export const coursePlayerApi = apiSlice.injectEndpoints({
 				}
 			},
 		}),
-		//Get All videos
+
+		//Get  course  video details
 		getCourseVideoDetails: builder.query({
 			query: ({ videoID }) => {
 				return `/videos/${videoID}`;

@@ -20,7 +20,7 @@ export const assignmentsMarksApi = apiSlice.injectEndpoints({
 					const { data: new_assignment } =
 						await queryFulfilled;
 					if (new_assignment?.id) {
-						// Pessimistic update
+						//Cash updating in  Pessimistic  way
 						dispatch(
 							apiSlice.util.updateQueryData(
 								"getAssignmentsMarks",
@@ -51,7 +51,7 @@ export const assignmentsMarksApi = apiSlice.injectEndpoints({
 				{ data, assignment_mark_id },
 				{ queryFulfilled, dispatch }
 			) {
-				//Optimistic update mutation
+				//Cash updating in  Optimistic  way
 				const patchResult = dispatch(
 					apiSlice.util.updateQueryData(
 						"getAssignmentsMarks",

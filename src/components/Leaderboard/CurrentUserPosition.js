@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 const CurrentUserPosition = ({ RankList }) => {
 	const { user } = useSelector((state) => state.auth);
 
+	//USer rank
 	let userRank = RankList?.filter((list) => list?.student_id == user.id);
 
 	return userRank?.length > 0 ? (

@@ -10,10 +10,6 @@ const AdminSignin = () => {
 	const [login, { data, isLoading, isError, error, isSuccess }] =
 		useLoginMutation();
 
-	console.log("====================================");
-	console.log(data, error);
-	console.log("====================================");
-
 	//Form state
 	const [formState, setFormState] = useState({});
 
@@ -28,7 +24,7 @@ const AdminSignin = () => {
 		login({ data: formState, role: "admin" });
 	};
 
-	//error and success handlaing
+	//error and success handling
 	useEffect(() => {
 		if (isError) {
 			setAlertOpen(true);

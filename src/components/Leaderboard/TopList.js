@@ -2,6 +2,7 @@ import React from "react";
 import TopListRow from "./TopListRow";
 
 const TopList = ({ RankList }) => {
+	// Filtering top 20 list
 	const findTop20List = (list) => {
 		return list.rank > 0 && list.rank < 21;
 	};

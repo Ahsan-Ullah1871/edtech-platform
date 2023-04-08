@@ -20,7 +20,7 @@ export const videosApi = apiSlice.injectEndpoints({
 					const { data: new_video } =
 						await queryFulfilled;
 					if (new_video?.id) {
-						// Pessimistic update
+						//Cash updating in  Pessimistic  way
 						dispatch(
 							apiSlice.util.updateQueryData(
 								"getVideos",
@@ -51,7 +51,7 @@ export const videosApi = apiSlice.injectEndpoints({
 				{ data, video_id },
 				{ queryFulfilled, dispatch }
 			) {
-				//Optimistic update mutation
+				//Cash updating in  Optimistic  way
 				const patchResult = dispatch(
 					apiSlice.util.updateQueryData(
 						"getVideos",
@@ -92,7 +92,7 @@ export const videosApi = apiSlice.injectEndpoints({
 				{ video_id },
 				{ queryFulfilled, dispatch }
 			) {
-				//Optimistic update mutation
+				//Cash updating in  Optimistic  way
 				const patchResult = dispatch(
 					apiSlice.util.updateQueryData(
 						"getVideos",

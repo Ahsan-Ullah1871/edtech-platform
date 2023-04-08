@@ -20,7 +20,7 @@ export const quizMarksApi = apiSlice.injectEndpoints({
 					const { data: new_quiz_mark } =
 						await queryFulfilled;
 					if (new_quiz_mark?.id) {
-						// Pessimistic update
+						//Cash updating in  Pessimistic  way
 						dispatch(
 							apiSlice.util.updateQueryData(
 								"getQuizMarks",

@@ -32,7 +32,7 @@ const EditAssignmentForm = ({
 	// Get Videos  query
 	const { data: videos } = useGetVideosQuery();
 
-	//Add assignment mutation
+	//Edit assignment mutation
 	const [editAssignment, { data, isLoading, isError, error, isSuccess }] =
 		useEditAssignmentMutation();
 
