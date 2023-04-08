@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CurrentUserPosition from "../../components/Leaderboard/CurrentUserPosition";
 import TopList from "../../components/Leaderboard/TopList";
 import { useGetAssignmentsMarksQuery } from "../../features/assignments-marks/AssignmentsMarksApi";
@@ -26,7 +26,23 @@ const Leaderboard = () => {
 	} = useGetQuizMarksQuery();
 
 	// RankList
-	let RankList = leaderBoardRank({ assignmentMarks, quizMarks });
+	const [rankList, setRankList] = useState([]);
+	useEffect(() => {
+		if (
+			!assignmentMarksLoading &&
+			!assignmentMarksIsFetching &&
+			!quizMarksIsLoading &&
+			!quizMarksIsFetching &&
+			(quizMarks?.length > 0 || assignmentMarks?.length > 0)
+		) {
+			setRankList(
+				leaderBoardRank({
+					assignmentMarks,
+					quizMarks,
+				})
+			);
+		}
+	}, [assignmentMarks, quizMarks]);
 
 	//Decide UI
 	let content = null;
@@ -78,12 +94,12 @@ const Leaderboard = () => {
 		!quizMarksIsLoading &&
 		!quizMarksIsFetching &&
 		(quizMarks?.length > 0 || assignmentMarks?.length > 0) &&
-		RankList?.length > 0
+		rankList?.length > 0
 	) {
 		content = (
 			<>
-				<CurrentUserPosition RankList={RankList} />
-				<TopList RankList={RankList} />
+				<CurrentUserPosition RankList={rankList} />
+				<TopList RankList={rankList} />
 			</>
 		);
 	}
