@@ -9,18 +9,15 @@ const SelectField = ({
 	options = [],
 	handleValueChange,
 }) => {
-	console.log("====================================");
-	console.log(formState);
-	console.log("====================================");
 	return (
 		<div className="flex flex-col gap-3">
-			<label className="text-sm font-medium text-[#8D98AF] ">
+			<p className="text-sm font-medium text-[#838ea4] ">
 				{title}
-			</label>
+			</p>
 			<select
 				name={key_name}
 				className=" w-full font-normal text-sm
-                        px-2 py-3 border border-[#F1F1F5] rounded-md   shadow-sm outline-none
+                        px-2 py-3 border border-indigo-100 rounded-md   shadow-md outline-none
                     focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 "
 				required={isRequired}
 				onChange={(e) => {

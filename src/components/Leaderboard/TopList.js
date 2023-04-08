@@ -2,6 +2,10 @@ import React from "react";
 import TopListRow from "./TopListRow";
 
 const TopList = ({ RankList }) => {
+	const findTop20List = (list) => {
+		return list.rank > 0 && list.rank < 21;
+	};
+
 	return (
 		RankList?.length > 0 && (
 			<div className="my-8">
@@ -28,7 +32,7 @@ const TopList = ({ RankList }) => {
 					</thead>
 
 					<tbody>
-						{RankList?.slice(0, 20)?.map(
+						{RankList?.filter(findTop20List).map(
 							(list) => (
 								<TopListRow
 									list={list}

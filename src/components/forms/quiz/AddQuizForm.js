@@ -30,7 +30,10 @@ const AddQuizForm = ({ setModal, setAlertOpen, SetAlertType, setMessage }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 
-		if (formState?.options?.length < 4) {
+		if (
+			formState?.options?.length < 4 ||
+			formState?.options === undefined
+		) {
 			setAlertOpen(true);
 			SetAlertType("error");
 			setMessage("Please add atlist 4 answer options!");
@@ -98,6 +101,8 @@ const AddQuizForm = ({ setModal, setAlertOpen, SetAlertType, setMessage }) => {
 						  ]
 						: [{ ...questionOption, id }],
 			}));
+
+			setQuestionOption({ option: "", isCorrect: false });
 		}
 	};
 
@@ -231,10 +236,13 @@ const AddQuizForm = ({ setModal, setAlertOpen, SetAlertType, setMessage }) => {
 						handle_dropdown_close={
 							handle_dropdown_close
 						}
-						dropdown_close_btn_title="Add "
-						dropdown_close_btn_disable={
+						dropdown_close_btn_title="Close"
+						dropdown_add_btn_title="Add new answer"
+						dropdown_add_btn_disable={
 							questionOption?.option
-								?.length == 0
+								?.length > 0
+								? false
+								: true
 						}
 					/>
 

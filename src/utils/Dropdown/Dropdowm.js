@@ -14,7 +14,8 @@ const Dropdown = ({
 	dropdown_options,
 	handle_dropdown_close,
 	dropdown_close_btn_title,
-	dropdown_close_btn_disable,
+	dropdown_add_btn_title,
+	dropdown_add_btn_disable,
 }) => {
 	const [isOpen, setIsOpen] = useState(true);
 	const dropdownContent = useRef(null);
@@ -118,24 +119,26 @@ const Dropdown = ({
 					</div>
 					<div
 						as="div"
-						className="w-full px-3 flex items-center justify-end gap-4 "
-						disabled={dropdown_close_btn_disable}
+						className="w-full px-3 mt-4 flex items-center justify-end gap-4 "
+						disabled={dropdown_add_btn_disable}
 					>
 						<SecondaryButton
-							title={"Cancel"}
+							title={
+								dropdown_close_btn_title
+							}
 							type="button"
 							handleClickFunction={() =>
 								setIsOpen(false)
 							}
 						/>
 						<PrimaryButton
-							title={"Save"}
+							title={dropdown_add_btn_title}
 							handleClickFunction={() => {
 								handle_dropdown_close();
 								setIsOpen(false);
 							}}
 							isDisable={
-								dropdown_close_btn_disable
+								dropdown_add_btn_disable
 							}
 						/>
 					</div>

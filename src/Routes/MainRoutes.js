@@ -16,6 +16,7 @@ import AdminPublicRoute from "./AdminPublicRoute";
 import PublicRoute from "./StudentPublicRoute";
 import PrivateRoute from "./StudentPrivateRoute";
 import Quiz from "../pages/student/Quiz";
+import ErrorUI from "../utils/Error/ErrorUi";
 
 export const AllRoutes = createBrowserRouter([
 	{
@@ -64,6 +65,11 @@ export const AllRoutes = createBrowserRouter([
 				),
 			},
 		],
+		errorElement: (
+			<div className="mt-20">
+				<ErrorUI message=" Sorry , There have not any page with this url " />
+			</div>
+		),
 	},
 	{
 		path: "/admin",
@@ -118,5 +124,10 @@ export const AllRoutes = createBrowserRouter([
 				),
 			},
 		],
+		errorElement: (
+			<div className="mt-20">
+				<ErrorUI message=" Sorry , There have not any page with this url " />
+			</div>
+		),
 	},
 ]);

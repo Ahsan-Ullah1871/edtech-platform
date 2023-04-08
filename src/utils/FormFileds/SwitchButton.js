@@ -62,9 +62,9 @@ const SwitchButton = ({
             pointer-events-none inline-block h-[20px] w-[20px] rounded-full bg-white shadow-lg transform ring-0 transition ease-in-out duration-200`}
 				/>
 			</Switch>
-			<label className="text-sm font-medium text-[#8D98AF] ">
+			<p className="text-sm font-medium text-[#838ea4] ">
 				{title}
-			</label>
+			</p>
 		</div>
 	);
 };

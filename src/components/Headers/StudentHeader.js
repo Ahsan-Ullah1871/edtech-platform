@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { handleLogout } from "../../utils/CommonFunctions";
+import { handleStudentLogout } from "../../utils/CommonFunctions";
 
 const StudentHeader = () => {
 	const dispatch = useDispatch();
@@ -23,7 +23,9 @@ const StudentHeader = () => {
 					<h2 className="font-bold">{user?.name}</h2>
 					<button
 						className="flex gap-2 border border-cyan items-center px-4 py-1 rounded-full text-sm transition-all hover:bg-cyan "
-						onClick={() => handleLogout(dispatch)}
+						onClick={() =>
+							handleStudentLogout(dispatch)
+						}
 					>
 						<svg
 							xmlns="http://www.w3.org/2000/svg"

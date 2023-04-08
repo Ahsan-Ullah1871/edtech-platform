@@ -85,7 +85,7 @@ const VideoDetails = () => {
 				<iframe
 					width="100%"
 					className="aspect-video"
-					src={selectedVideo?.url}
+					src={`${selectedVideo?.url}?autoplay=1`}
 					title={selectedVideo?.title}
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

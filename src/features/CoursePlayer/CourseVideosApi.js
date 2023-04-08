@@ -6,6 +6,7 @@ export const coursePlayerApi = apiSlice.injectEndpoints({
 		//Get All videos
 		getCourseVideos: builder.query({
 			query: () => "/videos",
+			providesTags: ["courseVideos"],
 
 			async onQueryStarted(arg, { queryFulfilled, dispatch }) {
 				try {
