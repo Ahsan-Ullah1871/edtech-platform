@@ -108,6 +108,8 @@ const EditQuizForm = ({
 						  ]
 						: [{ ...questionOption, id }],
 			}));
+
+			setQuestionOption({ option: "", isCorrect: false });
 		}
 	};
 
