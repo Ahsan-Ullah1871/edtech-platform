@@ -131,7 +131,7 @@ const VideoDetails = () => {
 							(!IsCurrentStudentQuizSubmitted ? (
 								<Link
 									to={`/quiz/${selectedVideo?.id}`}
-									className="px-3 font-bold py-1 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
+									className="px-3 font-bold py-2 border border-cyan text-cyan rounded-full text-sm hover:bg-cyan hover:text-primary"
 								>
 									{`কুইজে অংশগ্রহণ  করুন`}
 								</Link>
