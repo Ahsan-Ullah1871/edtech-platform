@@ -82,6 +82,9 @@ const EditVideoForm = ({
 						title="URL"
 						formState={formState}
 						isRequired={true}
+						info={
+							"Please provide the YouTube video URL that is contained within the embed code. The video URL can typically be found within the 'src' attribute of the 'iframe' tag in the embed code.  "
+						}
 					/>
 					<InputField
 						setFormState={setFormState}

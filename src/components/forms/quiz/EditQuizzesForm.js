@@ -241,10 +241,13 @@ const EditQuizForm = ({
 						handle_dropdown_close={
 							handle_dropdown_close
 						}
-						dropdown_close_btn_title="Add "
-						dropdown_close_btn_disable={
+						dropdown_close_btn_title="Close"
+						dropdown_add_btn_title="Add new answer"
+						dropdown_add_btn_disable={
 							questionOption?.option
-								?.length == 0
+								?.length > 0
+								? false
+								: true
 						}
 					/>
 
