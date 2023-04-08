@@ -47,7 +47,7 @@ const SubmitAssignmentForm = ({
 		user.name,
 	]);
 
-	//Add assignment mutation
+	//Add assignment mark mutation
 	const [
 		addAssignmentMark,
 		{ data, isLoading, isError, error, isSuccess },
