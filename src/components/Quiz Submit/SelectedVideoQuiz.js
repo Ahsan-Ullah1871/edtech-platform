@@ -18,6 +18,7 @@ const SelectedVideoQuiz = ({ quizzes, videoID }) => {
 	const navigate = useNavigate();
 	// User Details
 	const { user } = useSelector((state) => state.auth);
+
 	// Get videos query for fetch selected video details
 	const { data: videoDetails, isError: videoDetailsError } =
 		useGetCourseVideoDetailsQuery({
